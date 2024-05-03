@@ -1,0 +1,30 @@
+
+description: |-
+  Thermodynamic data for coal 
+  https://github.com/BYUignite/coalEQ
+  
+cantera-version: 3.0.0a5
+  
+phases:
+- name: coal
+  thermo: fixed-stoichiometry
+  elements: [C, H, O, N, S]
+  species: [coal]
+  state:
+    T: 300.0
+    P: 1.01325e+05
+
+species:
+- name: coal
+  composition: {C: 0.5295, H: 0.3977, O: 0.0491, N: 0.0087, S: 0.0149 }
+  
+  thermo:
+    model: NASA7
+    temperature-ranges: [200.00, 1000.00, 5000.00]
+    data:
+    - [ 6.033158803e-02, -6.505024935e-05, 1.520548943e-06, -1.991144585e-09, 7.866843410e-13, -6.937760736e+02, 9.376005914e-01 ]
+    - [ 1.790808875e-01, 2.041593280e-04, -8.742277364e-08, 1.674137319e-11, -1.188777745e-15, -7.555364555e+02, 1.797587321e-01 ]
+  equation-of-state:
+    model: constant-volume
+    density: 1.8 g/cm^3
+    
